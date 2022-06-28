@@ -1,6 +1,4 @@
-import 'package:design_project/design_system/theme/theme/app_buttonstyle.dart';
 import'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'controller/home_controller.dart';
 import 'design_system/theme/theme/app_color.dart';
@@ -30,13 +28,12 @@ class Home extends StatelessWidget {
               onPressed: (){
                 Get.changeTheme(Get.isDarkMode? AppTheme.light : AppTheme.dark);
               },
-              style: AppButtonStyle.whiteButtonStyle,
               child: Text("textButton"),
             ),
             ElevatedButton(
+              style: ButtonStyle(foregroundColor: MaterialStateProperty.all(AppColor.k())),
               onPressed: (){
               },
-              style: AppButtonStyle.myButtonStyle,
               child:Text("button"),
             ),
             const MyChip(label: "myChip",function: function),

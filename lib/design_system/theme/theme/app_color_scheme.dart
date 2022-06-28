@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
  ColorScheme lightColorScheme = ColorScheme(
    brightness : Brightness.light,
-   primary : Color(0xFFB02D2F),
-   onPrimary : Color(0xFFFFFFFF),
+   primary : AppColor.primary.shade400,
+   onPrimary : AppColor.primary.shade100,
    primaryContainer : Color(0xFFFFDAD7),
    onPrimaryContainer : Color(0xFF410004),
    secondary : Color(0xFF775654),

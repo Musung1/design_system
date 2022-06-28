@@ -32,12 +32,14 @@ class AppColor {
       900: Color(0xffffff),
     },
   );
-  static const Color my1 = Colors.yellow;
-  static const Color my2 = Colors.purpleAccent;
+
+
+  static const Color my1 = Colors.yellow; // light
+  static const Color my2 = Colors.purpleAccent; //dark
   //1. 맵핑을 함
   //2. 변환하는 함수 생성
   //3. 함수에 매핑 값 넣으면 테마별로 반환
   static Color k(){
-    return Get.isDarkMode? my1 : my2;
+    return !Get.isDarkMode? my1 : my2;
   }
 }
