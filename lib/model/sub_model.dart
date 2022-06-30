@@ -4,5 +4,5 @@ class SubModel{
   late String data;
   SubModel({required data});
   SubModel.fromSnapshot(DocumentSnapshot snapshot)
-      : data = "s";
+      : data = snapshot["data"];
 }

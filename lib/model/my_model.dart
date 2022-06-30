@@ -1,15 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:design_project/model/sub_model.dart';
+import 'package:get/get.dart';
 
 class MyModel{
-  late String data;
-  late List<SubModel> subModelList;
-  MyModel({required this.data,required this.subModelList});
-  Future fetchSubModel(DocumentSnapshot snapshot) async {
-    final ref = await snapshot.reference.collection("sub").get();
-    this.subModelList = ref.docs.map((e) => SubModel.fromSnapshot(e)).toList();
+  String? data;
+  RxList<SubModel> subModelList = <SubModel>[].obs;
+  MyModel({required this.data});
+  MyModel.empty(){
+    this.data = "2";
   }
   MyModel.fromSnapshot(DocumentSnapshot snapshot)
-      : data = snapshot['data'],
-        subModelList = [];
+      : data = snapshot['data'];
 }

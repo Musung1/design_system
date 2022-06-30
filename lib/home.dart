@@ -37,23 +37,20 @@ class Home extends StatelessWidget {
             ElevatedButton(
               style: ButtonStyle(foregroundColor: MaterialStateProperty.all(AppColor.k())),
               onPressed: (){
+                print("sssss");
+                HomeController.to.myModel.value = MyModel(data:"123");
               },
               child:Text("button"),
             ),
             const MyChip(label: "myChip",function: function),
-            FutureBuilder<MyModel>(
-                future : MyRepository().getModel(),
-                builder: (context,k){
-                  if(k.hasData){
-                    MyModel model = k.data!;
-                    return Container(
-                      child: Text(model.data,style: TextStyle(color: Colors.white),),
-                    );
-                  }
-                  else return Container(
-                    child: Text("hiroo"),
-                  );
-                }),
+            Obx((){
+                return Text(HomeController.to.myModel.value.data!);
+            }),
+            Obx((){
+              return Column(
+                children: HomeController.to.myModel.value.subModelList.map((e) => Text(e.data)).toList(),
+              );
+            }),
           ],
         ),
       ),
