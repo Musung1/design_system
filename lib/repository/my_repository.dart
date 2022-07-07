@@ -10,7 +10,7 @@ class MyRepository extends GetxService{
   k()async{
     userCollection.add({"a" : 123});
   }
-
+//////////
   Future<MyModel>getModel()async{
     final k = await userCollection.get();
     return MyModel.fromSnapshot(k.docs.first);
