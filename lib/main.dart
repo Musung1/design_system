@@ -8,7 +8,7 @@ import 'home.dart';
 main() {
   runApp(
     ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(375, 812),///
       minTextAdapt: true,
       builder: (context, child) {
         return GetMaterialApp(
